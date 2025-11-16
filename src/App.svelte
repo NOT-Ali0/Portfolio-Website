@@ -3,13 +3,57 @@
     import "aos/dist/aos.css";
     import { onMount } from "svelte";
     import { once } from "svelte/legacy";
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
+    const greeting = document.getElementById("greeting");
     onMount(() => {
         AOS.init({
             duration: 1000,
             once: true,
         });
     });
+
+    onMount(() => {
+        gsap.fromTo(
+            "#prot-Name",
+            {
+                y: -25,
+                rotate: -1,
+                duration:20,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut",
+            },
+            {
+                rotate: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut",
+            },
+        );
+    });
+
+    onMount(() => {
+        let ani = gsap.timeline();
+        ani.fromTo("#About-cart-me1", { x: -800 },{x:0})
+            .fromTo("#About-cart-me2", { y: -800 },{y:-0})
+            .fromTo("#About-cart-me3", { x: 500 },{x:-0});
+        ScrollTrigger.create({
+        animation: ani,
+        trigger: "#About-me",
+        start: "top top",
+        end: "+=3000px",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1
+    });
+        
+    });
+
+
+    
 </script>
 
 <head>
@@ -20,7 +64,7 @@
 
 <body>
     <div id="root">
-        <div data-aos="fade-down" id="nav-container">
+        <div id="nav-container">
             <b id="logo-name">AM</b>
             <nav>
                 <ul id="navi-ul">
@@ -31,14 +75,13 @@
                     <li><a href="#Touch">Contact</a></li>
                 </ul>
             </nav>
-            
         </div>
         <div data-aos="fade-down" id="greeting">
             <div id="greeting-p1">
                 <p>Hi, I'm</p>
             </div>
             <div>
-                <h3><span>Ali</span> Mohammed</h3>
+                <h3 id="prot-Name"><span>Ali</span> Mohammed</h3>
             </div>
             <div id="greeting-p2">
                 <p>
@@ -58,101 +101,95 @@
             <div class="arrow-down"></div>
         </div>
     </div>
-    <div id="About-me">
+    <section id="About-me">
         <h2 data-aos="fade-down">About <span>Me</span></h2>
         <div data-aos="fade-down" id="About-me-p">
             <p>
                 I'm a passionate developer with over 5 years of experience
-                building modern web applications.
+                building modern web applications. I specialize in creating
+                responsive, accessible, and performant solutions that solve
+                real-world problems. My approach combines technical expertise
+                with design thinking, ensuring every project not only works
+                flawlessly but also delivers an exceptional user experience.
             </p>
-            <p>
-                I specialize in creating responsive, accessible, and performant
-                solutions that solve real-world problems.
-            </p>
-            <br />
-            <p>
-                My approach combines technical expertise with design thinking,
-                ensuring every project not only works flawlessly but also
-                delivers an exceptional user experience.
-            </p>
-            <div id="cart-container">
-                <div id="About-cart-me1">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-code-icon lucide-code"
-                    >
-                        <path d="m16 18 6-6-6-6" />
-                        <path d="m8 6-6 6 6 6" />
-                    </svg>
-                    <h3>Clean Code</h3>
-                    <p>
-                        Writing maintainable, scalable code following best
-                        practices and modern patterns
-                    </p>
-                </div>
-                <div id="About-cart-me2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-paintbrush-vertical-icon lucide-paintbrush-vertical"
-                    >
-                        <path d="M10 2v2" />
-                        <path d="M14 2v4" />
-                        <path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" />
-                        <path
-                            d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1"
-                        />
-                    </svg>
-                    <h3>Design Focus</h3>
-                    <p>
-                        Creating beautiful, intuitive interfaces that users love
-                        to interact with
-                    </p>
-                </div>
-                <div id="About-cart-me3">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-gauge-icon lucide-gauge"
-                    >
-                        <path d="m12 14 4-4" />
-                        <path d="M3.34 19a10 10 0 1 1 17.32 0" />
-                    </svg>
-                    <h3>Performance</h3>
-                    <p>
-                        Optimizing for speed, accessibility, and exceptional
-                        user experiences
-                    </p>
-                </div>
+        </div>
+        <div id="cart-container">
+            <div data-aos="fade-right" id="About-cart-me1">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-code-icon lucide-code"
+                >
+                    <path d="m16 18 6-6-6-6" />
+                    <path d="m8 6-6 6 6 6" />
+                </svg>
+                <h3>Clean Code</h3>
+                <p>
+                    Writing maintainable, scalable code following best practices
+                    and modern patterns
+                </p>
+            </div>
+            <div data-aos="fade-up" id="About-cart-me2">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-paintbrush-vertical-icon lucide-paintbrush-vertical"
+                >
+                    <path d="M10 2v2" />
+                    <path d="M14 2v4" />
+                    <path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" />
+                    <path
+                        d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1"
+                    />
+                </svg>
+                <h3>Design Focus</h3>
+                <p>
+                    Creating beautiful, intuitive interfaces that users love to
+                    interact with
+                </p>
+            </div>
+            <div data-aos="fade-left" id="About-cart-me3">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-gauge-icon lucide-gauge"
+                >
+                    <path d="m12 14 4-4" />
+                    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                </svg>
+                <h3>Performance</h3>
+                <p>
+                    Optimizing for speed, accessibility, and exceptional user
+                    experiences
+                </p>
             </div>
         </div>
-    </div>
+    </section>
     <div id="Skills">
         <h2 data-aos="fade-down">Technical <span>Skills</span></h2>
-        <div data-aos="fade-down" id="Skills-tech">
-            <div id="Frontend">
+        <div id="Skills-tech">
+            <div data-aos="fade-right" id="Frontend">
                 <h4>Frontend</h4>
                 <ul id="Frontend-ul">
                     <li>React</li>
@@ -161,7 +198,7 @@
                     <li>Vue.js</li>
                 </ul>
             </div>
-            <div id="Backend">
+            <div data-aos="fade-up" id="Backend">
                 <h4>Backend</h4>
                 <ul id="Backend-ul">
                     <li>Node.js</li>
@@ -170,7 +207,7 @@
                     <li>C</li>
                 </ul>
             </div>
-            <div id="Tools-others">
+            <div data-aos="fade-left" id="Tools-others">
                 <h4>Tools & Others</h4>
                 <ul id="Tools-ul">
                     <li>Git</li>
@@ -183,8 +220,8 @@
     </div>
     <div id="Projects">
         <h2 data-aos="fade-down">Featured <span>Projects</span></h2>
-        <div data-aos="fade-down" id="Projects-Parent">
-            <div id="Projects-1">
+        <div id="Projects-Parent">
+            <div data-aos="fade-right" id="Projects-1">
                 <h4>Cinema App</h4>
                 <p>
                     A modern web application, view details, and manage cinema
@@ -214,7 +251,7 @@
                     </svg> Code</a
                 >
             </div>
-            <div id="Projects-2">
+            <div data-aos="fade-up" id="Projects-2">
                 <h4>Keep Goaler Game</h4>
                 <p>
                     A fast-paced ball game where you play as the goalkeeper
@@ -244,7 +281,7 @@
                     </svg> Code</a
                 >
             </div>
-            <div id="Projects-3">
+            <div data-aos="fade-left" id="Projects-3">
                 <h4>Shopping Cart</h4>
                 <p>
                     An interactive e-commerce web app to browse and manage
@@ -282,7 +319,7 @@
     </div>
     <div id="Touch">
         <h2 data-aos="fade-down">Get In <span>Touch</span></h2>
-        <div data-aos="fade-down" id="Forma">
+        <div data-aos="fade-up" id="Forma">
             <label for="name-input">Name</label>
             <input id="name-input" type="text" placeholder="Your name" />
             <label for="email-input">Email</label>
@@ -297,7 +334,7 @@
             <textarea id="areatext-input" placeholder="Your Message"></textarea>
             <button id="css-web">Send Message</button>
         </div>
-        <div data-aos="fade-down" id="Touch-links">
+        <div id="Touch-links">
             <a href="https://github.com/NOT-Ali0" target="_blank"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
