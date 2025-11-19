@@ -4,10 +4,6 @@
     import { onMount } from "svelte";
     import { once } from "svelte/legacy";
     import gsap from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-
-    const greeting = document.getElementById("greeting");
     onMount(() => {
         AOS.init({
             duration: 1000,
@@ -21,7 +17,7 @@
             {
                 y: -25,
                 rotate: -1,
-                duration:20,
+                duration: 20,
                 repeat: -1,
                 yoyo: true,
                 ease: "power1.inOut",
@@ -34,26 +30,6 @@
             },
         );
     });
-
-    onMount(() => {
-        let ani = gsap.timeline();
-        ani.fromTo("#About-cart-me1", { x: -800 },{x:0})
-            .fromTo("#About-cart-me2", { y: -800 },{y:-0})
-            .fromTo("#About-cart-me3", { x: 500 },{x:-0});
-        ScrollTrigger.create({
-        animation: ani,
-        trigger: "#About-me",
-        start: "top top",
-        end: "+=3000px",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1
-    });
-        
-    });
-
-
-    
 </script>
 
 <head>
@@ -61,12 +37,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Wepsite</title>
 </head>
-
 <body>
     <div id="root">
         <div id="nav-container">
             <b id="logo-name">AM</b>
             <nav>
+                <div id="lists-cont">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-list-icon lucide-list"
+                        ><path d="M3 5h.01" /><path d="M3 12h.01" /><path
+                            d="M3 19h.01"
+                        /><path d="M8 5h13" /><path d="M8 12h13" /><path
+                            d="M8 19h13"
+                        /></svg
+                    >
+                </div>
                 <ul id="navi-ul">
                     <li><a href="#greeting">Home</a></li>
                     <li><a href="#About-me">About</a></li>
@@ -93,10 +87,10 @@
                 </p>
             </div>
             <div>
-                <button id="button-2"
-                    ><a href="#Projects">View my work</a></button
+                <a href="#Projects">
+                    <button id="button-2">View my work</button></a
                 >
-                <button id="button-1"><a href="#Touch">Get In Touch</a></button>
+                <a href="#Touch"><button id="button-1">Get In Touch</button></a>
             </div>
             <div class="arrow-down"></div>
         </div>
@@ -105,12 +99,12 @@
         <h2 data-aos="fade-down">About <span>Me</span></h2>
         <div data-aos="fade-down" id="About-me-p">
             <p>
-                I'm a passionate developer with over 5 years of experience
-                building modern web applications. I specialize in creating
-                responsive, accessible, and performant solutions that solve
-                real-world problems. My approach combines technical expertise
-                with design thinking, ensuring every project not only works
-                flawlessly but also delivers an exceptional user experience.
+                I’m a web developer who loves creating simple and modern
+                websites. I enjoy learning new technologies and improving my
+                skills every day. My focus is on building clean, responsive, and
+                user-friendly designs that work well on all devices. I aim to
+                create projects that look good, run smoothly, and make a
+                positive impact.
             </p>
         </div>
         <div id="cart-container">
@@ -192,10 +186,10 @@
             <div data-aos="fade-right" id="Frontend">
                 <h4>Frontend</h4>
                 <ul id="Frontend-ul">
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind CSS</li>
-                    <li>Vue.js</li>
+                    <li>Svelte</li>
+                    <li>Javascript</li>
+                    <li>Tailwind</li>
+                    <li>CSS</li>
                 </ul>
             </div>
             <div data-aos="fade-up" id="Backend">
@@ -204,7 +198,6 @@
                     <li>Node.js</li>
                     <li>Python</li>
                     <li>C#</li>
-                    <li>C</li>
                 </ul>
             </div>
             <div data-aos="fade-left" id="Tools-others">
@@ -213,7 +206,7 @@
                     <li>Git</li>
                     <li>Vite</li>
                     <li>Docker</li>
-                    <li>Wordpress</li>
+                    <li>Codewars</li>
                 </ul>
             </div>
         </div>
@@ -319,21 +312,43 @@
     </div>
     <div id="Touch">
         <h2 data-aos="fade-down">Get In <span>Touch</span></h2>
-        <div data-aos="fade-up" id="Forma">
-            <label for="name-input">Name</label>
-            <input id="name-input" type="text" placeholder="Your name" />
-            <label for="email-input">Email</label>
-            <input id="email-input" type="email" placeholder="Your@email.com" />
-            <label for="subject-input">Subject</label>
+
+        <form
+            data-aos="fade-up"
+            id="Forma"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+        >
             <input
-                id="subject-input"
-                type="text "
-                placeholder="What's this about?"
+                type="hidden"
+                name="access_key"
+                value="90fb4a5d-6c17-464e-a3a5-a175661ca3d9"
+            />
+            <label for="name-input">Name</label>
+            <input
+                name="name"
+                id="name-input"
+                type="text"
+                placeholder="Your name"
+                required
+            />
+            <label for="email-input">Email</label>
+            <input
+                name="email"
+                id="email-input"
+                type="email"
+                placeholder="Your@email.com"
+                required
             />
             <label for="areatext-input">Message</label>
-            <textarea id="areatext-input" placeholder="Your Message"></textarea>
-            <button id="css-web">Send Message</button>
-        </div>
+            <textarea
+                id="areatext-input"
+                placeholder="Your Message"
+                name="message"
+                required
+            ></textarea>
+            <button type="submit" id="css-web">Send Message</button>
+        </form>
         <div id="Touch-links">
             <a href="https://github.com/NOT-Ali0" target="_blank"
                 ><svg

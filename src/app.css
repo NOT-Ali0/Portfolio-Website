@@ -123,7 +123,7 @@ a {
     animation: moveDown 1s infinite alternate;
     position: relative;
     bottom: clamp(60px, 10vw, 90px);
-    left: clamp(50px, 8vw, 75px);
+    left: clamp(83px, 8vw, 75px);
 }
 
 @keyframes moveDown {
@@ -218,7 +218,7 @@ a {
 #cart-container {
     width: 100%;
     max-width: 1200px;
-    min-height: 400px;
+    min-height: 280px;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -629,6 +629,12 @@ a {
     color: aqua;
 }
 
+
+#lists-cont{
+    display: none;
+
+}
+
 @media (min-width: 1920px) {
     #Skills-tech {
         gap: clamp(100px, 8vw, 120px);
@@ -718,6 +724,10 @@ a {
     #navi-ul {
         display: none;
     }
+
+    #lists-cont{
+        display: flex;
+    }
     
     #About-cart-me1,
     #About-cart-me2,
@@ -727,6 +737,11 @@ a {
     
     #Projects-Parent div {
         max-width: 100%;
+    }
+    .arrow-down{
+    bottom: clamp(80px, 10vw, 90px);
+    left: clamp(75px, 8vw, 75px);
+    
     }
 }
 
