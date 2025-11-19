@@ -17,7 +17,7 @@ body {
 #root {
     background-color: hsl(220, 26%, 7%);
     color: hsl(210, 40%, 98%);
-    background: url('photo3.png') no-repeat center/cover;
+    background: url('./photo3.png') no-repeat center/cover;
     width: 100%;
     overflow-x: hidden;
 }
