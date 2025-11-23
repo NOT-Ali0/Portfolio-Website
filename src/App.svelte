@@ -60,25 +60,25 @@
             },
             autoAlpha: 0,
             stagger: {
-                amount: 2,
+                amount: 1.5,
             },
         });
 
-        ScrollSmoother.create({
-            wrapper: "#wrapper",
-            content: "#content",
-            smooth: 2,
-            effects: true,
-        });
+        // ScrollSmoother.create({
+        //     wrapper: "#wrapper",
+        //     content: "#content",
+        //     smooth: 2,
+        //     effects: true,
+        // });
     });
 </script>
 
-<div id="wrapper">
-    <div id="content">
+<!-- <div id="wrapper">
+    <div id="content"> -->
         <Nav />
         <AboutMe />
         <Skills />
         <Projects />
         <FormStuff />
-    </div>
-</div>
+    <!-- </div>
+</div> -->

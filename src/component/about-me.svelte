@@ -35,28 +35,26 @@
         <div data-aos="fade-up" id="About-cart-me2">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="50"
+                width="40"
+                height="40"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-paintbrush-vertical-icon lucide-paintbrush-vertical"
+                class="lucide lucide-maximize2-icon lucide-maximize-2"
+                ><path d="M15 3h6v6" /><path d="m21 3-7 7" /><path
+                    d="m3 21 7-7"
+                /><path d="M9 21H3v-6" /></svg
             >
-                <path d="M10 2v2" />
-                <path d="M14 2v4" />
-                <path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" />
-                <path
-                    d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1"
-                />
-            </svg>
-            <h3>Design Focus</h3>
-            <p>
-                Creating beautiful, intuitive interfaces that users love to
-                interact with
-            </p>
+            <h3>Responsive</h3>
+
+            <div id="responsive">
+                <div class="loader"></div>
+                <div class="loader"></div>
+                <div class="loader"></div>
+            </div>
         </div>
         <div data-aos="fade-left" id="About-cart-me3">
             <svg
