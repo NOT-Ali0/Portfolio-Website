@@ -1,0 +1,130 @@
+#Projects {
+    min-height: 70vh;
+    width: 100%;
+    background: hsl(80, 6%, 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 40px);
+}
+
+#Projects h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    text-align: center;
+    margin-bottom: clamp(60px, 8vw, 90px);
+}
+
+#Projects span {
+    background: linear-gradient(to right, hsl(180, 84%, 55%), hsl(180, 84%, 55%), hsl(40, 96%, 65%));
+    background-clip: text;
+    color: transparent;
+}
+
+#Projects-Parent {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(15px, 2vw, 20px);
+    margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+#Projects-Parent div {
+    background: hsl(90, 15%, 9%);
+    border: solid thin rgba(211, 211, 211, 0.2);
+    border-radius: 5%;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 300px;
+    color: white;
+    box-sizing: border-box;
+    padding: clamp(15px, 2vw, 20px);
+    flex: 1 1 350px;
+}
+
+#Projects-1,
+#Projects-2,
+#Projects-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+#Projects-1:hover,
+#Projects-2:hover,
+#Projects-3:hover {
+    box-shadow: 0 0 40px 2px rgb(0, 255, 255, 0.3);
+    transition: all 300ms;
+    border: solid 1px aqua;
+}
+
+#Projects-1 h4,
+#Projects-2 h4,
+#Projects-3 h4 {
+    font-size: clamp(20px, 2.5vw, 25px);
+    margin-top: clamp(15px, 2vw, 20px);
+    margin-left: clamp(8px, 1.2vw, 10px);
+}
+
+#Projects-1 p,
+#Projects-2 p,
+#Projects-3 p {
+    width: 100%;
+    max-width: 370px;
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: rgba(211, 211, 211, 0.61);
+    margin-top: clamp(15px, 2vw, 20px);
+    margin-left: clamp(8px, 1.2vw, 10px);
+}
+
+#Projects-1 ul,
+#Projects-2 ul,
+#Projects-3 ul {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: clamp(12px, 1.5vw, 15px);
+    margin-top: clamp(20px, 3vw, 30px);
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+#Projects-ul li,
+#Projects-ul2 li,
+#Projects-ul3 li {
+    padding: clamp(2px, 0.5vw, 3px) clamp(6px, 1vw, 8px);
+    min-width: 68px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: aqua;
+    border-radius: 10px;
+    text-shadow: 0 0 2px aqua;
+    background: rgba(41, 41, 41, 0.61);
+    font-size: clamp(12px, 1.4vw, 14px);
+}
+
+#Projects-1 a,
+#Projects-2 a,
+#Projects-3 a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1vw, 8px);
+    margin-top: clamp(15px, 2vw, 20px);
+    margin-left: clamp(8px, 1.2vw, 10px);
+    color: aqua;
+    font-size: clamp(14px, 1.6vw, 16px);
+}

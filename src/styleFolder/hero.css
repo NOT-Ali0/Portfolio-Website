@@ -1,0 +1,223 @@
+#root {
+    background-color: hsl(220, 26%, 7%);
+    color: hsl(210, 40%, 98%);
+    background: url('../photo3.png') no-repeat center/cover;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 60px);
+    flex-wrap: wrap;
+    gap: clamp(15px, 2vw, 20px);
+}
+
+
+
+#logo-name {
+    font-weight: bold;
+    font-size: clamp(20px, 3vw, 25px);
+    padding: clamp(10px, 1.5vw, 15px);
+    margin: 0;
+    background: linear-gradient(to right, hsl(180, 84%, 55%), hsl(180, 84%, 55%), hsl(40, 96%, 65%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+/* navi css */
+
+.menu {
+  padding: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px 0 rgba(#000, 0.075);
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 50px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform-origin: center left;
+  transition: width 0.2s ease-in;
+  text-decoration: none;
+  color: inherit;
+  &:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    width: 130px;
+
+    &:before,
+    .link-title {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.link-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  left: 18px;
+  position: absolute;
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.link-title {
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
+  transform-origin: center right;
+  display: block;
+  text-align: center;
+  text-indent: 28px;
+  width: 100%;
+}
+
+/* navi css */
+
+
+
+#greeting {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(20px, 5vw, 40px);
+    text-align: center;
+}
+
+#greeting p {
+    padding: clamp(1px, 0.2vw, 2px);
+}
+
+#greeting h3 {
+    background: linear-gradient(to right, hsl(0, 0%, 100%), hsl(180, 84%, 55%), hsl(40, 96%, 60%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(40px, 6vw, 70px);
+    padding: clamp(20px, 3vw, 35px);
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+#greeting span {
+    color: white;
+}
+
+#greeting-p1 {
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+#greeting-p2 {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255, 255, 255, 0.61);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 0.5vw, 4px);
+    align-items: center;
+}
+
+#greeting button {
+    font-size: clamp(16px, 1.8vw, 18px);
+    margin: clamp(8px, 1.2vw, 10px);
+    padding: clamp(10px, 1.5vw, 12px) clamp(16px, 2vw, 20px);
+    border: solid 2px rgba(211, 211, 211, 0.2);
+    border-radius: 10px;
+    margin-top: clamp(30px, 4vw, 45px);
+}
+
+
+/* arrow */
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid aqua;
+    animation: moveDown 1s infinite alternate;
+    position: relative;
+    bottom: clamp(60px, 10vw, 90px);
+    left: clamp(88px, 8vw, 75px);
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* arrow */
+
+
+#button-1 {
+    transition: all 300ms;
+    background-color: rgb(0, 0, 0, 0.5);
+    opacity: 70%;
+}
+
+#button-1 a {
+    text-decoration: none;
+    color: white;
+}
+
+#button-1:hover {
+    transition: all 300ms;
+    border: 1px solid hsl(180, 84%, 55%);
+    cursor: pointer;
+}
+
+#button-2 {
+    background: hsl(180, 84%, 55%);
+}
+
+#button-2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+#button-2:hover {
+    transition: all 500ms;
+    border: 2px solid hsl(180, 84%, 55%);
+    cursor: pointer;
+    position: relative;
+    bottom: 2px;
+    box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.3);
+}

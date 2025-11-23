@@ -1,0 +1,219 @@
+#About-me {
+    width: 100%;
+    min-height: 85vh;
+    background: hsl(80, 6%, 10%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+    overflow-x: hidden;
+}
+
+#About-me h2 {
+    color: white;
+    font-size: clamp(35px, 5vw, 50px);
+    margin-bottom: clamp(30px, 5vw, 60px);
+    text-align: center;
+}
+
+#About-me span {
+    color: white;
+    background: linear-gradient(to right, hsl(180, 84%, 55%), hsl(180, 84%, 55%), hsl(40, 96%, 65%));
+    color: transparent;
+    background-clip: text;
+}
+
+#About-me-p {
+    max-width: min(900px, 90vw);
+    width: 100%;
+    color: rgba(211, 211, 211, 0.61);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+    font-size: clamp(18px, 2.5vw, 25px);
+    margin-bottom: clamp(40px, 5vw, 60px);
+    padding: 0 clamp(15px, 2vw, 20px);
+}
+
+#cart-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(15px, 2vw, 20px);
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 0 clamp(15px, 2vw, 20px);
+}
+
+#About-cart-me1,
+#About-cart-me2,
+#About-cart-me3 {
+    width: 100%;
+    max-width: 280px;
+    min-width: 250px;
+    min-height: 250px;
+    background: hsl(90, 15%, 9%);
+    border: solid thin rgba(211, 211, 211, 0.2);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: white;
+    box-sizing: border-box;
+    padding: clamp(15px, 2vw, 20px);
+    flex: 1 1 280px;
+}
+
+#About-cart-me1:hover,
+#About-cart-me2:hover,
+#About-cart-me3:hover {
+    border: solid 1px aqua;
+    box-shadow: 0 0 15px rgb(0, 255, 255, 0.5);
+    transition: all 300ms;
+}
+
+#About-cart-me1 p,
+#About-cart-me2 p,
+#About-cart-me3 p {
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: rgba(211, 211, 211, 0.61);
+    position: relative;
+    top: clamp(40px, 5vw, 55px);
+}
+
+#About-cart-me1 svg,
+#About-cart-me2 svg,
+#About-cart-me3 svg {
+    color: aqua;
+    margin-bottom: clamp(8px, 1.2vw, 10px);
+}
+
+#About-cart-me1 h3,
+#About-cart-me2 h3,
+#About-cart-me3 h3 {
+    position: relative;
+    top: clamp(8px, 1.2vw, 10px);
+    font-size: clamp(18px, 2vw, 22px);
+}
+
+
+#responsive{
+    position: relative;
+    top: 80px;
+    left: 118px;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 160px;
+  height: 100px;
+  margin-left: -80px;
+  margin-top: -50px;
+  border-radius: 5px;
+  background: #1e3f57;
+  animation: dot1_ 3s cubic-bezier(0.55,0.3,0.24,0.99) infinite;
+}
+
+.loader:nth-child(2) {
+  z-index: 11;
+  width: 150px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -75px;
+  border-radius: 3px;
+  background: hsl(80, 6%, 10%);
+  animation-name: dot2_;
+}
+
+.loader:nth-child(3) {
+  z-index: 12;
+  width: 40px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: -20px;
+  border-radius: 0 0 5px 5px;
+  background: aqua;
+  animation-name: dot3_;
+}
+
+@keyframes dot1_ {
+  3%,97% {
+    width: 160px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -80px;
+  }
+
+  30%,36% {
+    width: 80px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -40px;
+  }
+
+  63%,69% {
+    width: 40px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: -20px;
+  }
+}
+
+@keyframes dot2_ {
+  3%,97% {
+    height: 90px;
+    width: 150px;
+    margin-left: -75px;
+    margin-top: -45px;
+  }
+
+  30%,36% {
+    width: 70px;
+    height: 96px;
+    margin-left: -35px;
+    margin-top: -48px;
+  }
+
+  63%,69% {
+    width: 32px;
+    height: 60px;
+    margin-left: -16px;
+    margin-top: -30px;
+  }
+}
+
+@keyframes dot3_ {
+  3%,97% {
+    height: 20px;
+    width: 40px;
+    margin-left: -20px;
+    margin-top: 50px;
+  }
+
+  30%,36% {
+    width: 8px;
+    height: 8px;
+    margin-left: -5px;
+    margin-top: 49px;
+    border-radius: 8px;
+  }
+
+  63%,69% {
+    width: 16px;
+    height: 4px;
+    margin-left: -8px;
+    margin-top: -37px;
+    border-radius: 10px;
+  }
+}

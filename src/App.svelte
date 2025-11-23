@@ -4,7 +4,7 @@
     import { onMount } from "svelte";
     import { once } from "svelte/legacy";
     import gsap from "gsap";
-    import Nav from "./component/nav.svelte";
+    import Nav from "./component/hero.svelte";
     import AboutMe from "./component/about-me.svelte";
     import Skills from "./component/skills.svelte";
     import Projects from "./component/Projects.svelte";
@@ -12,11 +12,9 @@
     import { TextPlugin } from "gsap/TextPlugin";
     import { SplitText } from "gsap/SplitText";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
-    import {ScrollSmoother} from "gsap/ScrollSmoother"
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(TextPlugin);
     gsap.registerPlugin(SplitText);
-    gsap.registerPlugin(ScrollSmoother) 
     onMount(() => {
         AOS.init({
             duration: 1000,
@@ -63,22 +61,11 @@
                 amount: 1.5,
             },
         });
-
-        // ScrollSmoother.create({
-        //     wrapper: "#wrapper",
-        //     content: "#content",
-        //     smooth: 2,
-        //     effects: true,
-        // });
     });
 </script>
 
-<!-- <div id="wrapper">
-    <div id="content"> -->
-        <Nav />
-        <AboutMe />
-        <Skills />
-        <Projects />
-        <FormStuff />
-    <!-- </div>
-</div> -->
+<Nav />
+<AboutMe />
+<Skills />
+<Projects />
+<FormStuff />

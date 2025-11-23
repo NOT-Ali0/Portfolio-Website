@@ -1,0 +1,87 @@
+#Skills {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+    color: white;
+    background: black;
+    overflow-x: hidden;
+}
+
+#Skills h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    text-align: center;
+    width: 100%;
+    margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+#Skills span {
+    background: linear-gradient(to right, hsl(180, 84%, 55%), hsl(180, 84%, 55%), hsl(40, 96%, 65%));
+    background-clip: text;
+    color: transparent;
+}
+
+#Skills-tech {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(30px, 8vw, 100px);
+    row-gap: clamp(40px, 6vw, 60px);
+}
+
+#Skills-tech h4 {
+    color: aqua;
+    font-size: clamp(18px, 2.2vw, 25px);
+    margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+#Frontend,
+#Backend,
+#Tools-others {
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+#Frontend ul,
+#Backend ul,
+#Tools-others ul {
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 1.5vw, 15px);
+}
+
+#Frontend-ul li,
+#Backend-ul li,
+#Tools-ul li {
+    width: 100%;
+    max-width: 350px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: clamp(8px, 1.2vw, 12px) clamp(8px, 1.2vw, 10px);
+    border: solid 1px rgba(211, 211, 211, 0.2);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: hsl(90, 15%, 9%);
+    font-size: clamp(14px, 1.6vw, 16px);
+}
+
+#Frontend-ul li:hover,
+#Backend-ul li:hover,
+#Tools-ul li:hover {
+    transition: all 300ms;
+    border: solid 1px aqua;
+}

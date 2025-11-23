@@ -1,0 +1,134 @@
+#Touch {
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: clamp(50px, 8vw, 80px) clamp(20px, 5vw, 40px);
+}
+
+#Touch h2 {
+    font-size: clamp(30px, 5vw, 50px);
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+#Touch span {
+    background: linear-gradient(to right, hsl(180, 84%, 55%), hsl(180, 84%, 55%), hsl(40, 96%, 65%));
+    background-clip: text;
+    color: transparent;
+}
+
+#Forma {
+    width: 100%;
+    max-width: 700px;
+    min-width: 280px;
+    min-height: 65vh;
+    padding: clamp(20px, 4vw, 40px);
+    background: hsl(90, 15%, 9%);
+    border: solid 1px rgba(211, 211, 211, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: clamp(15px, 2vw, 20px);
+    box-sizing: border-box;
+}
+
+#Forma input {
+    font-family: sans-serif;
+    min-height: 40px;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.61);
+    border: solid 1px rgba(211, 211, 211, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-size: clamp(14px, 2vw, 20px);
+    padding: clamp(6px, 1vw, 8px) clamp(8px, 1.2vw, 10px);
+    outline: none;
+    box-sizing: border-box;
+}
+
+#Forma input:focus {
+    transition: all 300ms;
+    border: solid 1px aqua;
+    box-shadow: 0 0 4px aqua;
+}
+
+#Forma textarea:focus {
+    transition: all 300ms;
+    border: solid 1px aqua;
+    box-shadow: 0 0 4px aqua;
+}
+
+#Forma label {
+    font-size: clamp(14px, 2vw, 20px);
+    margin-bottom: clamp(2px, 0.3vw, 4px);
+}
+
+#Forma textarea {
+    font-family: sans-serif;
+    min-height: 150px;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.61);
+    border: solid 1px rgba(211, 211, 211, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-size: clamp(14px, 2vw, 20px);
+    padding: clamp(6px, 1vw, 8px) clamp(8px, 1.2vw, 10px);
+    outline: none;
+    box-sizing: border-box;
+}
+
+#Forma button {
+    transition: all 300ms;
+    min-height: 60px;
+    width: 100%;
+    padding: clamp(8px, 1.2vw, 10px);
+    border-radius: 10px;
+    background: linear-gradient(to right, hsl(180, 83%, 49%), hsl(180, 84%, 55%), hsl(199, 81%, 55%));
+    font-family: sans-serif;
+    font-size: clamp(16px, 2vw, 20px);
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+#Forma button:hover {
+    position: relative;
+    bottom: 2px;
+    box-shadow: 0 0 12px 5px rgb(0, 255, 255, 0.3);
+}
+
+#Touch-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 2vw, 20px);
+    margin-top: clamp(40px, 6vw, 60px);
+    flex-wrap: wrap;
+}
+
+#Touch-links a {
+    color: white;
+    transition: all 300ms;
+    font-size: clamp(14px, 1.6vw, 16px);
+}
+
+#Touch-links a:hover {
+    color: aqua;
+}
+
+
+#lists-cont{
+    display: none;
+
+}
