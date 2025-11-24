@@ -16,7 +16,29 @@ body {
     height: 100%;
 }
 
+/* arrow */
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid aqua;
+    animation: moveDown 1s infinite alternate;
+    position: relative;
+    bottom: clamp(60px, 10vw, 90px);
+    left: clamp(88px, 8vw, 75px);
+}
 
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* arrow */
 
 @media (min-width: 1920px) {
     #Skills-tech {
@@ -124,14 +146,9 @@ body {
     .arrow-down{
     bottom: clamp(80px, 10vw, 90px);
     left: clamp(75px, 8vw, 75px);
-    
-    }
+}
 }
 
-@media (max-width: 700px) {
-    #icon-nav {
-        display: none;
-    }
-}
+
 
 
